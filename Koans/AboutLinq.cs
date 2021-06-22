@@ -1,8 +1,5 @@
 ﻿using DotNetCoreKoans.Engine;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace DotNetCoreKoans.Koans
@@ -24,7 +21,7 @@ namespace DotNetCoreKoans.Koans
         [Step(1)]
         public void FilterArrayData()
         {
-            //This sample uses where to find all elements of an array less than 5.
+            //This sample uses "where" to find all elements of an array less than 5.
 
             // The Three Parts of a LINQ Query:
 
@@ -44,7 +41,6 @@ namespace DotNetCoreKoans.Koans
         [Step(2)]
         public void PutYourDataInOrderUsingOrderBy()
         {
-
             string[] customers = { "John", "Bill", "Maria", "George", "Anna" };
 
             var orderedCustomers =
@@ -52,16 +48,16 @@ namespace DotNetCoreKoans.Koans
                  orderby cust ascending //You can also use descending here for reverse order.
                  select cust;
 
-            Assert.Equal(FILL_ME_IN, customers[0]);
+            Assert.Equal(FILL_ME_IN, orderedCustomers.First());
+            Assert.Equal(FILL_ME_IN, orderedCustomers.Last());
         }
 
         [Step(3)]
         public void GetJustTheDataYouWantUsingTake()
         {
-
             int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
-             //Get just the 3 first numbers.
+            //Get just the 3 first numbers.
             var first3Numbers = numbers.Take(3);
 
             Assert.Equal(FILL_ME_IN, first3Numbers.Count());
@@ -74,6 +70,72 @@ namespace DotNetCoreKoans.Koans
 
             bool iAfterE = words.Any(w => w.Contains("ei")); //Check if any of your words contain 'ei'
             Assert.Equal(FILL_ME_IN, iAfterE);
+        }
+
+        
+        [Step(5)]
+        public void HowToUseWhereToFilterData()
+        {
+            var numbers = new[] {1, 2, 3, 4};
+            var result = numbers.Where(x => x > 2).ToArray();
+			
+            //What values should be in array?
+            Assert.Equal(FILL_ME_IN, result);
+        }
+		
+        [Step(6)]
+        public void HowToGetInfoIfValueIsGreaterThanUsingSelect()
+        {
+            var numbers = new[] {1, 2, 3, 4};
+            var result = numbers.Select(x => x > 2).ToArray();
+			
+            //What values should be in array?
+            Assert.Equal(FILL_ME_IN, result);
+        }
+
+        [Step(7)]
+        public void GetSumOfTheData()
+        {
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //Get sum of the array.
+            var sum = numbers.Sum();
+
+            Assert.Equal(FILL_ME_IN, sum);
+        }
+
+        [Step(8)]
+        public void GetMinimumOfTheData()
+        {
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //Get minumum of the array.
+            var min = numbers.Min();
+
+            Assert.Equal(FILL_ME_IN, min);
+        }
+
+        [Step(9)]
+        public void GetMaximumOfTheData()
+        {
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //Get maximum of the array.
+            var max = numbers.Max();
+
+            Assert.Equal(FILL_ME_IN, max);
+        }
+
+
+        [Step(10)]
+        public void GetAverageOfTheData()
+        {
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //Get average of the array.
+            var average = numbers.Average();
+
+            Assert.Equal(FILL_ME_IN, average);
         }
     }
 }

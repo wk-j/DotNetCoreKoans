@@ -1,6 +1,5 @@
 using Xunit;
 using DotNetCoreKoans.Engine;
-using System.Reflection;
 
 namespace DotNetCoreKoans.Koans
 {
@@ -15,7 +14,7 @@ namespace DotNetCoreKoans.Koans
                 Name = name;
             }
 
-            // For a method/function to be overidden by sub-classes, it must be virtual.
+            // For a method/function to be overridden by sub-classes, it must be virtual.
             public virtual string Bark()
             {
                 return "WOOF";
